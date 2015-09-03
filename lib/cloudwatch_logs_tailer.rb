@@ -43,7 +43,7 @@ module CloudwatchLogsTailer
         else
           next_token = nil
           puts "* Sleeping for #{@sleep_time}sec..."
-          sleep(@sleep_time)
+          sleep(@sleep_time.to_i)
         end
       end
     end
