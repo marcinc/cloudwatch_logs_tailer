@@ -54,8 +54,8 @@ module CloudwatchLogsTailer
       args = {
         log_group_name: @log_group_name, 
         interleaved: true, 
-        limit: @limit,
-        start_time: start_time
+        limit: @limit.to_i,
+        start_time: start_time.to_i
       }
       args.merge(next_token: next_token) unless next_token.nil?
       args.merge(log_stream_names: @stream_names) unless @stream_names.empty?
