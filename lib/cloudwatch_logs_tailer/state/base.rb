@@ -16,7 +16,7 @@ module CloudwatchLogsTailer
 
         def get_next_start_time event, &block
           start_time = event.timestamp + 1
-          yield(start_time)
+          yield(start_time) if block_given?
           start_time
         end
 
